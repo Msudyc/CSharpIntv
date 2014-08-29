@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D429A8FC-874D-4397-860F-EDF82D5F9983}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CRCup150CSharp</RootNamespace>
+    <AssemblyName>CRCup150CSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Chapter01_Q01.cs" />
+    <Compile Include="Chapter01_Q01Test.cs" />
+    <Compile Include="Chapter01_Q02.cs" />
+    <Compile Include="Chapter01_Q02Test.cs" />
+    <Compile Include="Chapter01_Q03.cs" />
+    <Compile Include="Chapter01_Q03Test.cs" />
+    <Compile Include="Chapter01_Q04.cs" />
+    <Compile Include="Chapter01_Q04Test.cs" />
+    <Compile Include="Chapter01_Q05.cs" />
+    <Compile Include="Chapter01_Q05Test.cs" />
+    <Compile Include="Chapter01_Q06.cs" />
+    <Compile Include="Chapter01_Q06Test.cs" />
+    <Compile Include="Chapter01_Q07.cs" />
+    <Compile Include="Chapter01_Q07Test.cs" />
+    <Compile Include="Chapter01_Q08.cs" />
+    <Compile Include="Chapter01_Q08Test.cs" />
+    <Compile Include="Chapter02_Q01.cs" />
+    <Compile Include="Chapter02_Q01Test.cs" />
+    <Compile Include="Chapter02_Q02.cs" />
+    <Compile Include="Chapter02_Q02Test.cs" />
+    <Compile Include="Chapter02_Q03.cs" />
+    <Compile Include="Chapter02_Q03Test.cs" />
+    <Compile Include="Chapter02_Q04.cs" />
+    <Compile Include="Chapter02_Q04Test.cs" />
+    <Compile Include="Chapter02_Q05.cs" />
+    <Compile Include="Chapter02_Q05Test.cs" />
+    <Compile Include="Chapter02_Q06.cs" />
+    <Compile Include="Chapter02_Q06Test.cs" />
+    <Compile Include="Chapter02_Q07.cs" />
+    <Compile Include="Chapter02_Q07Test.cs" />
+    <Compile Include="Chapter03_Q01.cs" />
+    <Compile Include="Chapter03_Q01Test.cs" />
+    <Compile Include="Chapter03_Q02.cs" />
+    <Compile Include="Chapter03_Q02Test.cs" />
+    <Compile Include="Chapter03_Q03.cs" />
+    <Compile Include="Chapter03_Q03Test.cs" />
+    <Compile Include="Chapter03_Q04.cs" />
+    <Compile Include="Chapter03_Q04Test.cs" />
+    <Compile Include="Chapter03_Q05.cs" />
+    <Compile Include="Chapter03_Q05Test.cs" />
+    <Compile Include="Chapter03_Q06.cs" />
+    <Compile Include="Chapter03_Q06Test.cs" />
+    <Compile Include="Chapter03_Q07.cs" />
+    <Compile Include="Chapter03_Q07Test.cs" />
+    <Compile Include="Chapter04_Q01.cs" />
+    <Compile Include="Chapter04_Q01Test.cs" />
+    <Compile Include="Chapter04_Q02.cs" />
+    <Compile Include="Chapter04_Q02Test.cs" />
+    <Compile Include="Chapter04_Q03.cs" />
+    <Compile Include="Chapter04_Q03Test.cs" />
+    <Compile Include="Chapter04_Q04.cs" />
+    <Compile Include="Chapter04_Q04Test.cs" />
+    <Compile Include="Chapter04_Q05.cs" />
+    <Compile Include="Chapter04_Q05Test.cs" />
+    <Compile Include="Chapter04_Q06.cs" />
+    <Compile Include="Chapter04_Q06Test.cs" />
+    <Compile Include="Chapter04_Q07.cs" />
+    <Compile Include="Chapter04_Q07Test.cs" />
+    <Compile Include="Chapter04_Q08.cs" />
+    <Compile Include="Chapter04_Q08Test.cs" />
+    <Compile Include="Chapter04_Q09.cs" />
+    <Compile Include="Chapter04_Q09Test.cs" />
+    <Compile Include="Chapter05_Q01.cs" />
+    <Compile Include="Chapter05_Q01Test.cs" />
+    <Compile Include="Chapter05_Q02.cs" />
+    <Compile Include="Chapter05_Q02Test.cs" />
+    <Compile Include="Chapter05_Q03.cs" />
+    <Compile Include="Chapter05_Q03Test.cs" />
+    <Compile Include="Chapter05_Q04.cs" />
+    <Compile Include="Chapter05_Q04Test.cs" />
+    <Compile Include="Chapter05_Q05.cs" />
+    <Compile Include="Chapter05_Q05Test.cs" />
+    <Compile Include="Chapter05_Q06.cs" />
+    <Compile Include="Chapter05_Q06Test.cs" />
+    <Compile Include="Chapter05_Q07.cs" />
+    <Compile Include="Chapter05_Q07Test.cs" />
+    <Compile Include="Chapter05_Q08.cs" />
+    <Compile Include="Chapter05_Q08Test.cs" />
+    <Compile Include="Chapter06_Q01.cs" />
+    <Compile Include="Chapter06_Q02.cs" />
+    <Compile Include="Chapter06_Q03.cs" />
+    <Compile Include="Chapter06_Q04.cs" />
+    <Compile Include="Chapter06_Q05.cs" />
+    <Compile Include="Chapter06_Q06.cs" />
+    <Compile Include="Chapter07_Q01.cs" />
+    <Compile Include="Chapter07_Q02.cs" />
+    <Compile Include="Chapter07_Q03.cs" />
+    <Compile Include="Chapter07_Q04.cs" />
+    <Compile Include="Chapter07_Q04Test.cs" />
+    <Compile Include="Chapter07_Q05.cs" />
+    <Compile Include="Chapter07_Q05Test.cs" />
+    <Compile Include="Chapter07_Q06.cs" />
+    <Compile Include="Chapter07_Q06Test.cs" />
+    <Compile Include="Chapter07_Q07.cs" />
+    <Compile Include="Chapter07_Q07Test.cs" />
+    <Compile Include="Chapter08_Q01.cs" />
+    <Compile Include="Chapter08_Q02.cs" />
+    <Compile Include="Chapter08_Q03.cs" />
+    <Compile Include="Chapter08_Q04.cs" />
+    <Compile Include="Chapter08_Q05.cs" />
+    <Compile Include="Chapter08_Q06.cs" />
+    <Compile Include="Chapter08_Q07.cs" />
+    <Compile Include="Chapter08_Q08.cs" />
+    <Compile Include="Chapter08_Q09.cs" />
+    <Compile Include="Chapter08_Q10.cs" />
+    <Compile Include="Chapter09_Q01.cs" />
+    <Compile Include="Chapter09_Q01Test.cs" />
+    <Compile Include="Chapter09_Q02.cs" />
+    <Compile Include="Chapter09_Q02Test.cs" />
+    <Compile Include="Chapter09_Q03.cs" />
+    <Compile Include="Chapter09_Q03Test.cs" />
+    <Compile Include="Chapter09_Q04.cs" />
+    <Compile Include="Chapter09_Q04Test.cs" />
+    <Compile Include="Chapter09_Q05.cs" />
+    <Compile Include="Chapter09_Q05Test.cs" />
+    <Compile Include="Chapter09_Q06.cs" />
+    <Compile Include="Chapter09_Q06Test.cs" />
+    <Compile Include="Chapter09_Q07.cs" />
+    <Compile Include="Chapter09_Q07Test.cs" />
+    <Compile Include="Chapter09_Q08.cs" />
+    <Compile Include="Chapter09_Q08Test.cs" />
+    <Compile Include="Chapter09_Q09.cs" />
+    <Compile Include="Chapter09_Q09Test.cs" />
+    <Compile Include="Chapter09_Q10.cs" />
+    <Compile Include="Chapter09_Q10Test.cs" />
+    <Compile Include="Chapter09_Q11.cs" />
+    <Compile Include="Chapter09_Q11Test.cs" />
+    <Compile Include="Chapter10_Q01.cs" />
+    <Compile Include="Chapter10_Q02.cs" />
+    <Compile Include="Chapter10_Q03.cs" />
+    <Compile Include="Chapter10_Q04.cs" />
+    <Compile Include="Chapter10_Q05.cs" />
+    <Compile Include="Chapter10_Q06.cs" />
+    <Compile Include="Chapter10_Q07.cs" />
+    <Compile Include="Chapter11_Q01.cs" />
+    <Compile Include="Chapter11_Q01Test.cs" />
+    <Compile Include="Chapter11_Q02.cs" />
+    <Compile Include="Chapter11_Q02Test.cs" />
+    <Compile Include="Chapter11_Q03.cs" />
+    <Compile Include="Chapter11_Q03Test.cs" />
+    <Compile Include="Chapter11_Q04.cs" />
+    <Compile Include="Chapter11_Q05.cs" />
+    <Compile Include="Chapter11_Q05Test.cs" />
+    <Compile Include="Chapter11_Q06.cs" />
+    <Compile Include="Chapter11_Q06Test.cs" />
+    <Compile Include="Chapter11_Q07.cs" />
+    <Compile Include="Chapter11_Q07Test.cs" />
+    <Compile Include="Chapter11_Q08.cs" />
+    <Compile Include="Chapter11_Q08Test.cs" />
+    <Compile Include="Chapter12_Q01.cs" />
+    <Compile Include="Chapter12_Q02.cs" />
+    <Compile Include="Chapter12_Q03.cs" />
+    <Compile Include="Chapter12_Q04.cs" />
+    <Compile Include="Chapter12_Q05.cs" />
+    <Compile Include="Chapter12_Q06.cs" />
+    <Compile Include="Chapter13_Q01.cs" />
+    <Compile Include="Chapter13_Q10.cs" />
+    <Compile Include="Chapter13_Q02.cs" />
+    <Compile Include="Chapter13_Q03.cs" />
+    <Compile Include="Chapter13_Q04.cs" />
+    <Compile Include="Chapter13_Q05.cs" />
+    <Compile Include="Chapter13_Q06.cs" />
+    <Compile Include="Chapter13_Q07.cs" />
+    <Compile Include="Chapter13_Q08.cs" />
+    <Compile Include="Chapter13_Q09.cs" />
+    <Compile Include="Chapter14_Q01.cs" />
+    <Compile Include="Chapter14_Q02.cs" />
+    <Compile Include="Chapter14_Q03.cs" />
+    <Compile Include="Chapter14_Q04.cs" />
+    <Compile Include="Chapter14_Q05.cs" />
+    <Compile Include="Chapter14_Q06.cs" />
+    <Compile Include="Chapter15_Q01.cs" />
+    <Compile Include="Chapter15_Q02.cs" />
+    <Compile Include="Chapter15_Q03.cs" />
+    <Compile Include="Chapter15_Q04.cs" />
+    <Compile Include="Chapter15_Q05.cs" />
+    <Compile Include="Chapter15_Q06.cs" />
+    <Compile Include="Chapter15_Q07.cs" />
+    <Compile Include="Chapter16_Q01.cs" />
+    <Compile Include="Chapter16_Q02.cs" />
+    <Compile Include="Chapter16_Q03.cs" />
+    <Compile Include="Chapter16_Q04.cs" />
+    <Compile Include="Chapter16_Q05.cs" />
+    <Compile Include="Chapter16_Q06.cs" />
+    <Compile Include="Chapter17_Q01.cs" />
+    <Compile Include="Chapter17_Q01Test.cs" />
+    <Compile Include="Chapter17_Q02.cs" />
+    <Compile Include="Chapter17_Q02Test.cs" />
+    <Compile Include="Chapter17_Q03.cs" />
+    <Compile Include="Chapter17_Q03Test.cs" />
+    <Compile Include="Chapter17_Q04.cs" />
+    <Compile Include="Chapter17_Q04Test.cs" />
+    <Compile Include="Chapter17_Q05.cs" />
+    <Compile Include="Chapter17_Q05Test.cs" />
+    <Compile Include="Chapter17_Q06.cs" />
+    <Compile Include="Chapter17_Q06Test.cs" />
+    <Compile Include="Chapter17_Q07.cs" />
+    <Compile Include="Chapter17_Q07Test.cs" />
+    <Compile Include="Chapter17_Q08.cs" />
+    <Compile Include="Chapter17_Q08Test.cs" />
+    <Compile Include="Chapter17_Q09.cs" />
+    <Compile Include="Chapter17_Q09Test.cs" />
+    <Compile Include="Chapter17_Q10.cs" />
+    <Compile Include="Chapter17_Q10Test.cs" />
+    <Compile Include="Chapter17_Q11.cs" />
+    <Compile Include="Chapter17_Q12.cs" />
+    <Compile Include="Chapter17_Q12Test.cs" />
+    <Compile Include="Chapter17_Q13.cs" />
+    <Compile Include="Chapter17_Q13Test.cs" />
+    <Compile Include="Chapter17_Q14.cs" />
+    <Compile Include="Chapter17_Q14Test.cs" />
+    <Compile Include="Chapter18_Q01.cs" />
+    <Compile Include="Chapter18_Q01Test.cs" />
+    <Compile Include="Chapter18_Q02.cs" />
+    <Compile Include="Chapter18_Q02Test.cs" />
+    <Compile Include="Chapter18_Q03.cs" />
+    <Compile Include="Chapter18_Q03Test.cs" />
+    <Compile Include="Chapter18_Q04.cs" />
+    <Compile Include="Chapter18_Q04Test.cs" />
+    <Compile Include="Chapter18_Q05.cs" />
+    <Compile Include="Chapter18_Q05Test.cs" />
+    <Compile Include="Chapter18_Q06.cs" />
+    <Compile Include="Chapter18_Q06Test.cs" />
+    <Compile Include="Chapter18_Q07.cs" />
+    <Compile Include="Chapter18_Q07Test.cs" />
+    <Compile Include="Chapter18_Q08.cs" />
+    <Compile Include="Chapter18_Q08Test.cs" />
+    <Compile Include="Chapter18_Q09.cs" />
+    <Compile Include="Chapter18_Q09Test.cs" />
+    <Compile Include="Chapter18_Q10.cs" />
+    <Compile Include="Chapter18_Q10Test.cs" />
+    <Compile Include="Chapter18_Q11.cs" />
+    <Compile Include="Chapter18_Q11Test.cs" />
+    <Compile Include="Chapter18_Q12.cs" />
+    <Compile Include="Chapter18_Q12Test.cs" />
+    <Compile Include="Chapter18_Q13.cs" />
+    <Compile Include="Chapter18_Q13Test.cs" />
+    <Compile Include="Commons.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
