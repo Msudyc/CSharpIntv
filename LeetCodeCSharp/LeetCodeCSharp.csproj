@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F027B084-25E2-48B7-ABFF-48A44D0AE5D1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LeetCodeCSharp</RootNamespace>
+    <AssemblyName>LeetCodeCSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commons.cs" />
+    <Compile Include="Ex001-TwoSum-Test.cs" />
+    <Compile Include="Ex001-TwoSum.cs" />
+    <Compile Include="Ex002-MedianofTwoSortedArrays-Test.cs" />
+    <Compile Include="Ex002-MedianofTwoSortedArrays.cs" />
+    <Compile Include="Ex003-LongestSubstringWithoutRepeatingCharacters-Test.cs" />
+    <Compile Include="Ex003-LongestSubstringWithoutRepeatingCharacters.cs" />
+    <Compile Include="Ex004-AddTwoNumbers-Test.cs" />
+    <Compile Include="Ex004-AddTwoNumbers.cs" />
+    <Compile Include="Ex005-LongestPalindromicSubstring-Test.cs" />
+    <Compile Include="Ex005-LongestPalindromicSubstring.cs" />
+    <Compile Include="Ex006-ZigZagConversion-Test.cs" />
+    <Compile Include="Ex006-ZigZagConversion.cs" />
+    <Compile Include="Ex007-ReverseInteger-Test.cs" />
+    <Compile Include="Ex007-ReverseInteger.cs" />
+    <Compile Include="Ex008-StringtoInteger-Test.cs" />
+    <Compile Include="Ex008-StringtoInteger.cs" />
+    <Compile Include="Ex009-PalindromeNumber-Test.cs" />
+    <Compile Include="Ex009-PalindromeNumber.cs" />
+    <Compile Include="Ex010-RegularExpressionMatching-Test.cs" />
+    <Compile Include="Ex010-RegularExpressionMatching.cs" />
+    <Compile Include="Ex011-ContainerWithMostWater-Test.cs" />
+    <Compile Include="Ex011-ContainerWithMostWater.cs" />
+    <Compile Include="Ex012-IntegertoRoman-Test.cs" />
+    <Compile Include="Ex012-IntegertoRoman.cs" />
+    <Compile Include="Ex013-RomantoInteger-Test.cs" />
+    <Compile Include="Ex013-RomantoInteger.cs" />
+    <Compile Include="Ex014-LongestCommonPrefix-Test.cs" />
+    <Compile Include="Ex014-LongestCommonPrefix.cs" />
+    <Compile Include="Ex015-3Sum-Test.cs" />
+    <Compile Include="Ex015-3Sum.cs" />
+    <Compile Include="Ex016-3SumClosest-Test.cs" />
+    <Compile Include="Ex016-3SumClosest.cs" />
+    <Compile Include="Ex017-4Sum-Test.cs" />
+    <Compile Include="Ex017-4Sum.cs" />
+    <Compile Include="Ex018-LetterCombinationsofaPhoneNumber-Test.cs" />
+    <Compile Include="Ex018-LetterCombinationsofaPhoneNumber.cs" />
+    <Compile Include="Ex019-RemoveNthNodeFromEndofList-Test.cs" />
+    <Compile Include="Ex019-RemoveNthNodeFromEndofList.cs" />
+    <Compile Include="Ex020-ValidParentheses-Test.cs" />
+    <Compile Include="Ex020-ValidParentheses.cs" />
+    <Compile Include="Ex021-GenerateParentheses-Test.cs" />
+    <Compile Include="Ex021-GenerateParentheses.cs" />
+    <Compile Include="Ex022-MergekSortedLists-Test.cs" />
+    <Compile Include="Ex022-MergekSortedLists.cs" />
+    <Compile Include="Ex023-SwapNodesinPairs-Test.cs" />
+    <Compile Include="Ex023-SwapNodesinPairs.cs" />
+    <Compile Include="Ex024-ReverseNodesink-Group-Test.cs" />
+    <Compile Include="Ex024-ReverseNodesink-Group.cs" />
+    <Compile Include="Ex025-RemoveDuplicatesfromSortedArray-Test.cs" />
+    <Compile Include="Ex025-RemoveDuplicatesfromSortedArray.cs" />
+    <Compile Include="Ex026-RemoveElement-Test.cs" />
+    <Compile Include="Ex026-RemoveElement.cs" />
+    <Compile Include="Ex027-ImplementstrStr-Test.cs" />
+    <Compile Include="Ex027-ImplementstrStr.cs" />
+    <Compile Include="Ex028-DivideTwoIntegers-Test.cs" />
+    <Compile Include="Ex028-DivideTwoIntegers.cs" />
+    <Compile Include="Ex029-SubstringwithConcatenationofAllWords-Test.cs" />
+    <Compile Include="Ex029-SubstringwithConcatenationofAllWords.cs" />
+    <Compile Include="Ex030-NextPermutation-Test.cs" />
+    <Compile Include="Ex030-NextPermutation.cs" />
+    <Compile Include="Ex031-LongestValidParentheses-Test.cs" />
+    <Compile Include="Ex031-LongestValidParentheses.cs" />
+    <Compile Include="Ex032-SearchinRotatedSortedArray-Test.cs" />
+    <Compile Include="Ex032-SearchinRotatedSortedArray.cs" />
+    <Compile Include="Ex033-SearchforaRange-Test.cs" />
+    <Compile Include="Ex033-SearchforaRange.cs" />
+    <Compile Include="Ex034-SearchInsertPosition-Test.cs" />
+    <Compile Include="Ex034-SearchInsertPosition.cs" />
+    <Compile Include="Ex035-ValidSudoku-Test.cs" />
+    <Compile Include="Ex035-ValidSudoku.cs" />
+    <Compile Include="Ex036-SudokuSolver-Test.cs" />
+    <Compile Include="Ex036-SudokuSolver.cs" />
+    <Compile Include="Ex037-CountandSay-Test.cs" />
+    <Compile Include="Ex037-CountandSay.cs" />
+    <Compile Include="Ex038-CombinationSum-Test.cs" />
+    <Compile Include="Ex038-CombinationSum.cs" />
+    <Compile Include="Ex039-CombinationSumII-Test.cs" />
+    <Compile Include="Ex039-CombinationSumII.cs" />
+    <Compile Include="Ex040-FirstMissingPositive-Test.cs" />
+    <Compile Include="Ex040-FirstMissingPositive.cs" />
+    <Compile Include="Ex041-TrappingRainWater-Test.cs" />
+    <Compile Include="Ex041-TrappingRainWater.cs" />
+    <Compile Include="Ex042-MultiplyStrings-Test.cs" />
+    <Compile Include="Ex042-MultiplyStrings.cs" />
+    <Compile Include="Ex043-WildcardMatching-Test.cs" />
+    <Compile Include="Ex043-WildcardMatching.cs" />
+    <Compile Include="Ex044-JumpGameII-Test.cs" />
+    <Compile Include="Ex044-JumpGameII.cs" />
+    <Compile Include="Ex045-Permutations-Test.cs" />
+    <Compile Include="Ex045-Permutations.cs" />
+    <Compile Include="Ex046-PermutationsII-Test.cs" />
+    <Compile Include="Ex046-PermutationsII.cs" />
+    <Compile Include="Ex047-RotateImage-Test.cs" />
+    <Compile Include="Ex047-RotateImage.cs" />
+    <Compile Include="Ex048-Anagrams-Test.cs" />
+    <Compile Include="Ex048-Anagrams.cs" />
+    <Compile Include="Ex049-Pow%28x_n%29-Test.cs" />
+    <Compile Include="Ex049-Pow%28x_n%29.cs" />
+    <Compile Include="Ex050-N-Queens-Test.cs" />
+    <Compile Include="Ex050-N-Queens.cs" />   
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
