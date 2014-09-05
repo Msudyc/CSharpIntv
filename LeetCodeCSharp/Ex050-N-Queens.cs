@@ -56,7 +56,7 @@ namespace LeetCodeCSharp
             if (cur == result.Length)
                 res.Add(result);
 
-            for (int i = 0; i < (int)result.Length; i++)
+            for (int i = 0; i < result.Length; i++)
             {
                 if (IsValid(result, cur, i))
                 {
@@ -71,7 +71,7 @@ namespace LeetCodeCSharp
             foreach (int[] result in res)
             {
                 List<string> r = new List<string>();
-                for (int i = 0; i < (int)result.Length; i++)
+                for (int i = 0; i < result.Length; i++)
                 {
                     string str = new string('.', result.Length);
                     char[] arr = str.ToCharArray();

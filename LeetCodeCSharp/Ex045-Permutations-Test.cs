@@ -13,7 +13,7 @@ namespace LeetCodeCSharp
             List<int> t = new List<int>();
             t.Add(1); t.Add(2);
             List<List<int>> res = Ex045.Permute(t);
-            Assert.AreEqual(2, (int)res.Count);
+            Assert.AreEqual(2, res.Count);
         }
 
         [TestMethod]
@@ -22,7 +22,7 @@ namespace LeetCodeCSharp
             List<int> t = new List<int>();
             t.Add(1); t.Add(2); t.Add(3);
             List<List<int>> res = Ex045.Permute(t);
-            Assert.AreEqual(6, (int)res.Count);
+            Assert.AreEqual(6, res.Count);
         }
 
         [TestMethod]
@@ -31,7 +31,7 @@ namespace LeetCodeCSharp
             List<int> t = new List<int>();
             t.Add(1);
             List<List<int>> res = Ex045.Permute(t);
-            Assert.AreEqual(1, (int)res.Count);
+            Assert.AreEqual(1, res.Count);
         }
     };
 }

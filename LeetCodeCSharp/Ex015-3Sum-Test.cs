@@ -17,7 +17,7 @@ namespace LeetCodeCSharp
             v.Add(1);
             v.Add(2);
             List<List<int>> r = Ex015.ThreeSum(v);
-            Assert.AreEqual(2, (int)r.Count);
+            Assert.AreEqual(2, r.Count);
         }
 
         [TestMethod]
@@ -31,7 +31,7 @@ namespace LeetCodeCSharp
             v.Add(-1);
             v.Add(-4);
             List<List<int>> r = Ex015.ThreeSum(v);
-            Assert.AreEqual(2, (int)r.Count);
+            Assert.AreEqual(2, r.Count);
         }
 
         [TestMethod]
@@ -52,7 +52,7 @@ namespace LeetCodeCSharp
             v.Add(0);
             v.Add(0);
             List<List<int>> r = Ex015.ThreeSum(v);
-            Assert.AreEqual(3, (int)r.Count);
+            Assert.AreEqual(3, r.Count);
         }
     };
 }

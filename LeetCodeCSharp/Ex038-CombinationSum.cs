@@ -54,7 +54,7 @@ namespace LeetCodeCSharp
             else if (target == 0) 
                 res.Add(r);
             else
-                while (i < (int)candidates.Count && target - candidates[i] >= 0)
+                while (i < candidates.Count && target - candidates[i] >= 0)
                 {
                     r.Add(candidates[i]);
                     Dfs(candidates, target-candidates[i], res, r, i);

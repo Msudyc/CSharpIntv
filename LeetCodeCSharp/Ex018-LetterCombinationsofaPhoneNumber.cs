@@ -37,12 +37,12 @@ namespace LeetCodeCSharp
             string[] dict = { "", "", "abc", "def", "ghi", "jkl", "mno", "qprs", "tuv", "wxyz" };
             List<string> result = new List<string>();
             result.Add("");
-            for (int i = 0; i < (int)digits.Length; i++)
+            for (int i = 0; i < digits.Length; i++)
             {
                 string s = dict[digits[i] - '0'];
                 List<string> tmp = new List<string>();
-                for (int j = 0; j < (int)s.Length; j++)
-                    for (int k = 0; k < (int)result.Count; k++)
+                for (int j = 0; j < s.Length; j++)
+                    for (int k = 0; k < result.Count; k++)
                         tmp.Add(result[k] + s[j]);
                 result = tmp;
             }

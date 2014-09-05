@@ -16,7 +16,7 @@ namespace LeetCodeCSharp
             t.Add("dcba");
             t.Add("fcba");
             List<string> r = Ex048.Anagrams(t);
-            Assert.AreEqual(2, (int)r.Count);
+            Assert.AreEqual(2, r.Count);
         }
 
         [TestMethod]
@@ -29,7 +29,7 @@ namespace LeetCodeCSharp
             t.Add("da");
             t.Add("dac");
             List<string> r = Ex048.Anagrams(t);
-            Assert.AreEqual(4, (int)r.Count);
+            Assert.AreEqual(4, r.Count);
         }
     };
 }

@@ -17,7 +17,7 @@ namespace LeetCodeCSharp
             v.Add(1);
             v.Add(2);
             List<List<int>> r = Ex017.FourSum(v, 0);
-            Assert.AreEqual(1, (int)r.Count);
+            Assert.AreEqual(1, r.Count);
         }
 
         [TestMethod]
@@ -29,7 +29,7 @@ namespace LeetCodeCSharp
             v.Add(1);
             v.Add(2);
             List<List<int>> r = Ex017.FourSum(v, 0);
-            Assert.AreEqual(0, (int)r.Count);
+            Assert.AreEqual(0, r.Count);
         }
 
         [TestMethod]
@@ -43,7 +43,7 @@ namespace LeetCodeCSharp
             v.Add(-2);
             v.Add(2);
             List<List<int>> r = Ex017.FourSum(v, 0);
-            Assert.AreEqual(3, (int)r.Count);
+            Assert.AreEqual(3, r.Count);
         }
     };
 }
