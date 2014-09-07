@@ -53,7 +53,7 @@ namespace LeetCodeCSharp
     public class UndirectedGraphNode 
     {
         public int Label { get; set; }
-        public List<UndirectedGraphNode> Neighbors { get; private set; }
+        public List<UndirectedGraphNode> Neighbors { get; set; }
 
         public UndirectedGraphNode(int x)
         {
