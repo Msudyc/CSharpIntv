@@ -8,7 +8,7 @@ namespace CRCup150CSharpTests
     public class Chapter04_Q03Test
     {
         [TestMethod]
-        public void CRCup_CH04_02_Search1()
+        public void CRCup_CH04_03_CreateMinimalBST1()
         {
             int[] arr = { 0, 1, 2, 3, 4, 5, 6};
             TreeNode<int> root = Chapter04_Q03.CreateMinimalBST(arr);

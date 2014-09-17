@@ -67,48 +67,26 @@ namespace LeetCodeCSharp
 
         public static bool IsMatchDP(string s, string p)
         {
-            if (string.IsNullOrEmpty(s)) 
-                return string.IsNullOrEmpty(p);
+            // dp[i, j] => s[0->i-1] matches p[0->j-1]
+            bool[,] dp = new bool[s.Length + 1, p.Length + 1];
+            dp[0, 0] = true;
 
-            int slen = s.Length;
-            int plen = p.Length;
-            bool[,] dp = new bool[plen + 1, slen + 1];
-            dp[0,0] = true;
-            for(int i = 1; i <= plen; i++) 
-            {
-                switch(p[i-1]) 
+            for (int i = 1; i <= p.Length; i++)
+                if (p[i - 1] == '*')
+                    if (i > 1)
+                        dp[0, i] = dp[0, i - 2];
+
+            for (int i = 1; i <= s.Length; i++)
+                for (int j = 1; j <= p.Length; j++)
                 {
-                case '*':
-                    dp[i,0] = i > 1 ? dp[i-2,0] : false;
-                    if(i < 2) 
-                        continue;
-                    if(p[i - 2] != '.')
-                    {
-                        for(int j = 1; j <= slen; j++)
-                        {
-                            if(dp[i-1,j] || (i >= 2 && dp[i-2,j]) || 
-                                (j >= 2 && dp[i,j-1] && s[j-1] == s[j-2] && s[j-2] == p[i-2]))
-                                dp[i,j] = true;
-                        }
-                    }
+                    if (p[j - 1] != '*')
+                        dp[i, j] = dp[i - 1, j - 1] && (s[i - 1] == p[j - 1] || p[j - 1] == '.');
                     else
-                    {
-                        int j = 1;
-                        while(!dp[i-2,j] && j <= slen && !dp[i-1,j]) 
-                            j++;
-                        for(; j <= slen; j++) 
-                            dp[i,j] = true;
-                    }
-                    break;
-                default :
-                    for(int j = 1; j <= slen; j++) 
-                        if(dp[i-1,j-1] && (s[j-1] == p[i-1] || p[i-1]=='.'))
-                            dp[i,j] = true;
-                    break;
+                        dp[i, j] = dp[i, j - 1] || (j >= 2 && dp[i, j - 2]) ||
+                            (dp[i - 1, j] && (s[i - 1] == p[j - 2] || p[j - 2] == '.'));
                 }
-            }
-        
-            return dp[plen,slen];
+
+            return dp[s.Length, p.Length];
         }
     }
 }
