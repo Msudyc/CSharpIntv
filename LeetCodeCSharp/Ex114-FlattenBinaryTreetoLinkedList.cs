@@ -63,5 +63,27 @@ namespace LeetCodeCSharp
 
             Flatten(root.Right);
         }
+
+        public static void FlattenI(TreeNode root)
+        {
+            Stack<TreeNode> stk = new Stack<TreeNode>();
+            while (root != null)
+            {
+                if (root.Left != null)
+                {
+                    if (root.Right != null)
+                        stk.Push(root.Right);
+                    root.Right = root.Left;
+                    root.Left = null;
+                }
+                else
+                {
+                    if (root.Right == null && stk.Count > 0)
+                        root.Right = stk.Pop();
+                }
+
+                root = root.Right;
+            }
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace LeetCodeCSharp
     public class Ex014Test
     {
         [TestMethod]
-        public void LeetCode_Ex014_Test_longestCommonPrefix()
+        public void LeetCode_Ex014_Test_LongestCommonPrefix1()
         {
             List<string> t = new List<string>();
             t.Add("aab");
@@ -18,14 +18,14 @@ namespace LeetCodeCSharp
         }
 
         [TestMethod]
-        public void LeetCode_Ex014_Test_longestCommonPrefix1()
+        public void LeetCode_Ex014_Test_LongestCommonPrefix2()
         {
             List<string> t = new List<string>();
             Assert.AreEqual("", Ex014.LongestCommonPrefix(t));
         }
 
         [TestMethod]
-        public void LeetCode_Ex014_Test_longestCommonPrefix2()
+        public void LeetCode_Ex014_Test_LongestCommonPrefix3()
         {
             List<string> t = new List<string>();
             t.Add("aab");
@@ -33,7 +33,7 @@ namespace LeetCodeCSharp
         }
 
         [TestMethod]
-        public void LeetCode_Ex014_Test_longestCommonPrefix3()
+        public void LeetCode_Ex014_Test_LongestCommonPrefix4()
         {
             List<string> t = new List<string>();
             t.Add("a");
@@ -43,7 +43,7 @@ namespace LeetCodeCSharp
         }
 
         [TestMethod]
-        public void LeetCode_Ex014_Test_longestCommonPrefix4()
+        public void LeetCode_Ex014_Test_LongestCommonPrefix5()
         {
             List<string> t = new List<string>();
             t.Add("aa");

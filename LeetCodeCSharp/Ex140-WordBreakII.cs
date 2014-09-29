@@ -30,34 +30,27 @@ namespace LeetCodeCSharp
     {
         public static List<string> WordBreak(string s, HashSet<string> dict)
         {
-            int len = s.Length;
-            List<List<int>> record = new List<List<int>>();
-
-            for (int i = 0; i < len; i++)
-                record.Add(new List<int>());
-
-            for (int end = len - 1; end >= 0; end--)
-                for (int runner = end; runner >= 0; runner--)
-                    if (dict.Contains(s.Substring(runner, end - runner + 1)))
-                        record[runner].Add(end);
-
-            List<string> solutionSet = new List<string>();
-            WordBreakHelper(record, 0, s, "", solutionSet);
-
-            return solutionSet;
+            List<string> result = new List<string>();
+            WordBreakHelper(s, dict, "", result);
+            return result;
         }
 
         private static void WordBreakHelper(
-            List<List<int>> record, int current, string s, string solution, List<string> solutionSet)
+            string s, HashSet<string> dict, string solution, List<string> solutionSet)
         {
-            foreach (int end in record[current])
+            if (dict.Contains(s))
             {
-                string sub = s.Substring(current, end - current + 1);
-                string newSoln = solution + (current == 0 ? sub : " " + sub);
-                if (end == s.Length - 1)
-                    solutionSet.Add(newSoln);
-                else
-                    WordBreakHelper(record, end + 1, s, newSoln, solutionSet);
+                solution += s;
+                solutionSet.Add(solution);
+            }
+            else
+            {
+                for (int i = 0; i < s.Length - 1; i++)
+                    if (dict.Contains(s.Substring(0, i + 1)))
+                    {
+                        string t = solution + s.Substring(0, i + 1) + " ";
+                        WordBreakHelper(s.Substring(i + 1), dict, t, solutionSet);
+                    }
             }
         }
     }

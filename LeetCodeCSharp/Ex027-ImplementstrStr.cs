@@ -24,28 +24,20 @@ namespace LeetCodeCSharp
             if (string.IsNullOrEmpty(needle))
                 return haystack;
 
-            int start = 0;
-            int i1 = 0;
-            int i2 = 0;
-            while (i1 < haystack.Length && i2 < needle.Length)
-            {
-                if (haystack[i1] == needle[i2])
-                {
-                    i1++;
-                    i2++;
-                }
-                else
-                {
-                    start++;
-                    i1 = start;
-                    i2 = 0;
-                }
-            }
+            for (int i = 0; i < haystack.Length; i++)
+                if (Match(haystack, i, needle))
+                    return haystack.Substring(i);
 
-            if (i2 == needle.Length && (i1 - start) == needle.Length)
-                return haystack.Substring(start);
-            else
-                return null;
+            return null;
+        }
+
+        private static bool Match(string haystack, int i, string needle)
+        {
+            for (int j = 0; j < needle.Length; j++)
+                if (needle[j] != haystack[i + j])
+                    return false;
+
+            return true;
         }
     }
 }

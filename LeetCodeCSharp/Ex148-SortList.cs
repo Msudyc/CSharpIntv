@@ -21,24 +21,21 @@ namespace LeetCodeCSharp
     {
         public static ListNode SortList(ListNode head)
         {
-            if (null == head || null == head.Next) 
+            if (head == null || head.Next == null)
                 return head;
-            else
-            {
-                ListNode fast = head, slow = head;
-                while (fast.Next != null && fast.Next.Next != null)
-                {
-                    fast = fast.Next.Next;
-                    slow = slow.Next;
-                }
 
-                fast = slow;
-                slow = slow.Next;
-                fast.Next = null;
-                fast = SortList(head);
-                slow = SortList(slow);
-                return Merge(fast, slow);
+            ListNode p = head, q = head.Next;
+            while (q != null && q.Next != null)
+            {
+                p = p.Next;
+                q = q.Next.Next;
             }
+
+            ListNode t = p.Next;
+            p.Next = null;
+            return Merge(
+                SortList(head), 
+                SortList(t));
         }
 
         private static ListNode Merge(ListNode head1, ListNode head2)

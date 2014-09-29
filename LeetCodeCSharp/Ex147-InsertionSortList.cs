@@ -50,5 +50,36 @@ namespace LeetCodeCSharp
 
             return head;
         }
+
+        public static ListNode InsertionSortList2(ListNode head)
+        {
+            ListNode resultHead = head;
+            ListNode remain = head.Next;
+            resultHead.Next = null;
+
+            ListNode p, q;
+            while (remain != null)
+            {
+                p = resultHead;
+                q = remain;
+                remain = q.Next;
+
+                if (p.Val > q.Val)
+                {
+                    q.Next = p;
+                    resultHead = q;
+                }
+                else
+                {
+                    while (p.Next != null && p.Next.Val < q.Val)
+                        p = p.Next;
+
+                    q.Next = p.Next;
+                    p.Next = q;
+                }
+            }
+
+            return resultHead;
+        }
     }
 }

@@ -33,26 +33,31 @@ namespace LeetCodeCSharp
     {
         public static string CountAndSay(int n)
         {
-            StringBuilder buf = new StringBuilder("1");
-            for (int i = 1; i < n; i++)
+            string result = "1";
+            for (int i = 2; i <= n; i++)
             {
-                StringBuilder tmp = new StringBuilder();
-                int j = 0;
-                while (j < buf.Length)
+                StringBuilder sb = new StringBuilder();
+                char cur = result[0];
+                int count = 1;
+                for (int j = 1; j < result.Length; j++)
                 {
-                    char c = buf[j];
-                    int count, k;
-                    for (k = j, count = 0; k < buf.Length && buf[k] == c; k++)
+                    if (result[j] == cur)
                         count++;
-
-                    tmp.Append(count).Append(c);
-                    j = k;
+                    else
+                    {
+                        sb.Append(count);
+                        sb.Append(cur);
+                        cur = result[j];
+                        count = 1;
+                    }
                 }
 
-                buf = tmp;
+                sb.Append(count);
+                sb.Append(cur);
+                result = sb.ToString();
             }
 
-            return buf.ToString();
+            return result;
         }
     }
 }

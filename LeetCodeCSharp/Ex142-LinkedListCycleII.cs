@@ -24,32 +24,32 @@ namespace LeetCodeCSharp
     {
         public static ListNode DetectCycle(ListNode head)
         {
-            if (null == head) 
+            if (null == head)
                 return null;
 
-            if (head.Next == head) 
+            if (head.Next == head)
                 return head;
 
-            ListNode pre = head, p = head;
-            do
+            ListNode p = head, q = head;
+            while (q != null && q.Next != null)
             {
-                if (p != null && p.Next != null && p.Next.Next != null)
-                    p = p.Next.Next;
-                else 
-                    return null;
-                pre = pre.Next;
-            }
-
-            while (pre != p);
-
-            pre = head;
-            while (pre != p)
-            {
-                pre = pre.Next;
                 p = p.Next;
+                q = q.Next.Next;
+                if (p == q)
+                    break;
             }
 
-            return pre;
+            if (q == null || q.Next == null)
+                return null;
+
+            p = head;
+            while (p != q)
+            {
+                p = p.Next;
+                q = q.Next;
+            }
+
+            return q;
         }
     }
 }

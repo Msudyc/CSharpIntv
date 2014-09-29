@@ -24,85 +24,48 @@ namespace LeetCodeCSharp
     {
         public static int RomanToInt(string s)
         {
-            int r = 0;
-            int n = s.Length;
-            int k = 0;
+            Dictionary<char, Tuple<int, int, char, char, char>> map =
+                new Dictionary<char, Tuple<int, int, char, char, char>>();
 
-            while (k < n)
+            map.Add('I', new Tuple<int, int, char, char, char>(1, 1, 'I', 'V', 'X'));
+            map.Add('V', new Tuple<int, int, char, char, char>(5, 1, 'I', 'V', 'X'));
+            map.Add('X', new Tuple<int, int, char, char, char>(10, 10, 'X', 'L', 'C'));
+            map.Add('L', new Tuple<int, int, char, char, char>(50, 10, 'X', 'L', 'C'));
+            map.Add('C', new Tuple<int, int, char, char, char>(100, 100, 'C', 'D', 'M'));
+            map.Add('D', new Tuple<int, int, char, char, char>(500, 100, 'C', 'D', 'M'));
+            map.Add('M', new Tuple<int, int, char, char, char>(1000, 1000, 'M', ' ', ' '));
+
+            int result = 0;
+            int i = 0;
+            while (i < s.Length)
             {
-                switch (s[k])
+                Tuple<int, int, char, char, char> temp = map[s[i]];
+                if (temp.Item1 / temp.Item2 == 1)
                 {
-                    case 'M':
-                        r += 1000; 
-                        k++; 
-                        break;
-                    case 'D': 
-                        r += 500; 
-                        k++; 
-                        break;
-                    case 'C':
-                        if (s[k + 1] == 'M') 
-                        { 
-                            r += 900; 
-                            k = k + 2; 
-                        }
-                        else if (s[k + 1] == 'D') 
-                        { 
-                            r += 400; 
-                            k = k + 2; }
-                        else 
-                        { 
-                            r += 100; 
-                            k++; 
-                        }
-                        break;
-                    case 'L': 
-                        r += 50; 
-                        k++; 
-                        break;
-                    case 'X':
-                        if (s[k + 1] == 'C') 
-                        { 
-                            r += 90; 
-                            k = k + 2; 
-                        }
-                        else if (s[k + 1] == 'L') 
-                        { 
-                            r += 40; 
-                            k = k + 2; 
-                        }
-                        else 
-                        { 
-                            r += 10; 
-                            k++; 
-                        }
-                        break;
-                    case 'V': 
-                        r += 5; 
-                        k++; 
-                        break;
-                    case 'I':
-                        if (k + 1 < n && s[k + 1] == 'X') 
-                        { 
-                            r += 9; 
-                            k = k + 2; 
-                        }
-                        else if (k + 1 < n && s[k + 1] == 'V') 
-                        { 
-                            r += 4; 
-                            k = k + 2; 
-                        }
-                        else 
-                        { 
-                            r += 1; 
-                            k++; 
-                        }
-                        break;
-                    default: break;
+                    if (i + 1 < s.Length && s[i + 1] == temp.Item4)
+                    {
+                        result += temp.Item1 * 4;
+                        i += 2;
+                    }
+                    else if (i + 1 < s.Length && s[i + 1] == temp.Item5)
+                    {
+                        result += temp.Item1 * 9;
+                        i += 2;
+                    }
+                    else
+                    {
+                        result += temp.Item1;
+                        i++;
+                    }
+                }
+                else
+                {
+                    result += temp.Item1;
+                    i++;
                 }
             }
 
-            return r;
+            return result;
         }
     }
 }

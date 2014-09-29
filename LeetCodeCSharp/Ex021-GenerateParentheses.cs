@@ -32,20 +32,15 @@ namespace LeetCodeCSharp
 
         private static void Generate(int l, int r, string s, List<string> res)
         {
-            if (l == 0 && r == 0) 
+            if (l == 0 && r == 0)
                 res.Add(s);
+            else
+            {
+                if (l > 0)
+                    Generate(l - 1, r, s + "(", res);
 
-            if (l < r)
-            {
-                if (l > 0) 
-                    Generate(l - 1, r, s + "(", res);
-                if (r > 0) 
+                if (r > l)
                     Generate(l, r - 1, s + ")", res);
-            }
-            else if (l == r)
-            {
-                if (l > 0) 
-                    Generate(l - 1, r, s + "(", res);
             }
         }
     }

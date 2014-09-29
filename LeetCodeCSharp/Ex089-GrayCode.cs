@@ -39,14 +39,16 @@ namespace LeetCodeCSharp
     {
         public static List<int> GrayCode(int n)
         {
-            List<int> ret = new List<int>();
-            int count = 0x01 << n;
-            for (int i = 0; i < count; ++i)
+            List<int> result = new List<int>();
+            result.Add(0);
+            for (int i = 0; i < n; i++)
             {
-                ret.Add(i ^ (i >> 1));
+                int size = result.Count;
+                for (int j = size - 1; j >= 0; j--)
+                    result.Add(result[j] + (1 << i));
             }
 
-            return ret;
+            return result;
         }
     }
 }

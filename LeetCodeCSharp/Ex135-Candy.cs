@@ -48,5 +48,35 @@ namespace LeetCodeCSharp
 
             return result;
         }
+
+        public static int Candy2(int[] ratings)
+        {
+            if (ratings.Length == 0)
+                return 0;
+
+            int[] temp = new int[ratings.Length];
+            temp[0] = 1;
+            int last = 0;
+            for (int i = 1; i < ratings.Length; i++)
+            {
+                if (ratings[i] > ratings[i - 1])
+                {
+                    temp[i] = temp[i - 1] + 1;
+                    last = i;
+                }
+                else
+                {
+                    temp[i] = 1;
+                    for (int j = i - 1; j >= last && temp[j] <= temp[j + 1]; j--)
+                        temp[j]++;
+                }
+            }
+
+            int total = 0;
+            foreach (int c in temp)
+                total += c;
+
+            return total;
+        }
     }
 }

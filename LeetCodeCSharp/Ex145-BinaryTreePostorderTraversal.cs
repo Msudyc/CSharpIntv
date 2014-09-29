@@ -67,5 +67,32 @@ namespace LeetCodeCSharp
 
             return res;
         }
+
+        public static List<int> PostorderTraversal2(TreeNode root)
+        {
+            HashSet<TreeNode> map = new HashSet<TreeNode>();
+            Stack<TreeNode> stk = new Stack<TreeNode>();
+            List<int> result = new List<int>();
+            stk.Push(root);
+            while (stk.Count > 0)
+            {
+                TreeNode t = stk.Peek();
+                if (map.Contains(t))
+                {
+                    result.Add(t.Val);
+                    stk.Pop();
+                }
+                else
+                {
+                    if (t.Right != null)
+                        stk.Push(t.Right);
+                    if (t.Left != null)
+                        stk.Push(t.Left);
+                    map.Add(t);
+                }
+            }
+
+            return result;
+        }
     }
 }

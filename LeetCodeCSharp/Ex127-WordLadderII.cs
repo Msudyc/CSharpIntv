@@ -124,5 +124,68 @@ namespace LeetCodeCSharp
                 oneSoln.Remove(start);
             }
         }
+
+        public static List<List<string>> FindLaddersBFS(string start, string end, HashSet<string> dict)
+        {
+            dict.Add(end);
+            HashSet<string> visited = new HashSet<string>();
+            List<List<string>> result = new List<List<string>>();
+            Queue<Tuple<string, List<string>>> queue = new Queue<Tuple<string, List<string>>>();
+            queue.Enqueue(new Tuple<string, List<string>>(start, new List<string>()));
+
+            while (queue.Count > 0)
+            {
+                Tuple<string, List<string>> temp = queue.Dequeue();
+                visited.Add(temp.Item1);
+                if (temp.Item1 == end)
+                {
+                    temp.Item2.Add(end);
+                    if (result.Count == 0 || result[0].Count == temp.Item2.Count)
+                        result.Add(new List<string>(temp.Item2));
+                    else
+                        if (result[0].Count > temp.Item2.Count)
+                        {
+                            result.RemoveAt(0);
+                            result.Add(new List<string>(temp.Item2));
+                        }
+                }
+                else
+                {
+                    List<string> words = GetAllWords(temp.Item1, dict, visited);
+                    foreach (string w in words)
+                    {
+                        List<string> l = new List<string>(temp.Item2);
+                        l.Add(temp.Item1);
+                        Tuple<string, List<string>> item = new Tuple<string, List<string>>(w, l);
+                        queue.Enqueue(item);
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        private static List<string> GetAllWords(
+            string word, HashSet<string> dict, HashSet<string> visited)
+        {
+            List<string> result = new List<string>();
+            for (int i = 0; i < word.Length; i++)
+            {
+                char[] str = word.ToCharArray();
+                for (int j = 0; j < 26; j++)
+                {
+                    char c = (char)(j + 'a');
+                    if (c != word[i])
+                    {
+                        str[i] = c;
+                        string stt = new string(str);
+                        if (dict.Contains(stt) && !visited.Contains(stt))
+                            result.Add(stt);
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }

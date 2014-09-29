@@ -21,22 +21,25 @@ namespace LeetCodeCSharp
     {
         public static int Sqrt(int x)
         {
-            if (x == 0) 
+            if (x <= 0)
                 return 0;
 
-            if (x == 1) 
+            if (x == 1)
                 return 1;
 
-            double x0 = 1;
-            double x1;
-            while (true)
+            int high = x;
+            int low = 0;
+            int mid;
+            while (high - low > 1)
             {
-                x1 = (x0 + x / x0) / 2.0;
-                if (Math.Abs(x1 - x0) < 1.0) 
-                    return (int)x1;
-
-                x0 = x1;
+                mid = low + (high - low) / 2;
+                if (mid * mid <= x)
+                    low = mid;
+                else
+                    high = mid;
             }
+
+            return low;
         }
     }
 }

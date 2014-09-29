@@ -21,34 +21,39 @@ namespace LeetCodeCSharp
     {
         public static ListNode MergeKLists(List<ListNode> lists)
         {
-            if (lists.Count == 0) 
+            if (lists.Count == 0)
                 return null;
 
             ListNode dummy = new ListNode(0);
             dummy.Next = lists[0];
-            ListNode p, q, temp;
+            ListNode cur, p, q;
+
             for (int i = 1; i < lists.Count; i++)
             {
-                p = dummy; 
+                cur = dummy;
+                p = cur.Next;
                 q = lists[i];
-                while(q != null)
+
+                while (p != null && q != null)
                 {
-                    if(p.Next == null) 
-                    { 
-                        p.Next = q; 
-                        break; 
-                    } //critical
-                    if(p.Next.Val < q.Val) 
+                    if (p.Val < q.Val)
+                    {
+                        cur.Next = p;
                         p = p.Next;
+                    }
                     else
                     {
-                        temp = p.Next;
-                        p.Next = q;
+                        cur.Next = q;
                         q = q.Next;
-                        p = p.Next;
-                        p.Next = temp;
                     }
+
+                    cur = cur.Next;
                 }
+
+                if (p == null)
+                    cur.Next = q;
+                else if (q == null)
+                    cur.Next = p;
             }
 
             return dummy.Next;

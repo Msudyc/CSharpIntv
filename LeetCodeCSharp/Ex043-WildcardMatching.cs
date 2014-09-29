@@ -77,5 +77,25 @@ namespace LeetCodeCSharp
 
             return pS == s.Length && pP == p.Length;
         }
+
+        public static bool IsMatchR(string s, string p)
+        {
+            if (string.IsNullOrEmpty(s) || string.IsNullOrEmpty(p))
+                return string.IsNullOrEmpty(p) && string.IsNullOrEmpty(s);
+
+            char fs = s[0];
+            char fp = p[0];
+
+            if (fp != '*')
+                return (fs == fp || fp == '?') && IsMatchR(s.Substring(1), p.Substring(1));
+            else
+            {
+                for (int i = 0; i <= s.Length; i++)
+                    if (IsMatchR(s.Substring(i), p.Substring(1)))
+                        return true;
+
+                return false;
+            }
+        }
     }
 }
