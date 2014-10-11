@@ -11,11 +11,11 @@ namespace CRCup150CSharpTests
         public void CRCup_CH17_14_Parse1()
         {
             string[] dict = { "looked", "just", "like", "her", "brother" };
-            string s = "therbrother";
+            string s = "jesslookedjustliketimherbrother";
             Chapter17_Q14 test = new Chapter17_Q14(dict, s);
             string result = test.Parse();
             Assert.AreEqual(
-                "T her brother",
+                "JESS looked just like TIM her brother",
                 result.TrimEnd());
         }
     }

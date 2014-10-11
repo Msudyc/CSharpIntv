@@ -21,7 +21,7 @@ namespace CRCup150CSharpTests
             n3.Next = n4;
             n4.Next = n5;
 
-            Chapter02_Q01.DeleteDups<int>(n1);
+            Chapter02_Q01.DeleteDups(n1);
 
             ListNode<int> r = n1;
             Assert.AreEqual(1, r.Data);
@@ -47,7 +47,7 @@ namespace CRCup150CSharpTests
             n3.Next = n4;
             n4.Next = n5;
 
-            Chapter02_Q01.DeleteDups2<int>(n1);
+            Chapter02_Q01.DeleteDups2(n1);
 
             ListNode<int> r = n1;
             Assert.AreEqual(1, r.Data);

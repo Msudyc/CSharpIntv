@@ -17,20 +17,25 @@ namespace CRCup150CSharp
     {
         public static ListNode<int> AddLists(ListNode<int> l1, ListNode<int> l2)
         {
-            ListNode<int> result = null, p = null;
+            if (l1 == null)
+                return l2;
+            if (l2 == null)
+                return l1;
+
+            ListNode<int> head = null, p = null;
             int carry = 0;
             while (l1 != null && l2 != null)
             {
-                int value = (l1.Data + l2.Data + carry) % 10;
+                int v = (l1.Data + l2.Data + carry) % 10;
                 carry = (l1.Data + l2.Data + carry) / 10;
-                if (p == null)
+                if (head == null)
                 {
-                    p = new ListNode<int>(value);
-                    result = p;
+                    p = new ListNode<int>(v);
+                    head = p;
                 }
                 else
                 {
-                    p.Next = new ListNode<int>(value);
+                    p.Next = new ListNode<int>(v);
                     p = p.Next;
                 }
 
@@ -38,29 +43,20 @@ namespace CRCup150CSharp
                 l2 = l2.Next;
             }
 
-            ListNode<int> q = l1 != null ? l1 : l2;
-            while (q != null)
+            ListNode<int> left = l1 != null ? l1 : l2;
+            while (left != null)
             {
-                int value = (q.Data + carry) % 10;
-                carry = (q.Data + carry) / 10;
-                if (p == null)
-                {
-                    p = new ListNode<int>(value);
-                    result = p;
-                }
-                else
-                {
-                    p.Next = new ListNode<int>(value);
-                    p = p.Next;
-                }
-
-                q = q.Next;
+                int v = (left.Data + carry) % 10;
+                carry = (left.Data + carry) / 10;
+                p.Next = new ListNode<int>(v);
+                p = p.Next;
+                left = left.Next;
             }
 
-            if (carry > 0)
-                p.Next = new ListNode<int>(carry);
+            if (carry == 1)
+                p.Next = new ListNode<int>(1);
 
-            return result;
+            return head;
         }
     }
 }

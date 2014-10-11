@@ -13,48 +13,44 @@ namespace CRCup150CSharp
 
     public class Chapter02_Q01
     {
-        public static void DeleteDups<T>(ListNode<T> head)
+        public static void DeleteDups(ListNode<int> head)
         {
-            Dictionary<T, bool> map = new Dictionary<T, bool>();
-            ListNode<T> pre = new ListNode<T>(default(T));
-            pre.Next = head;
-            while (head != null)
+            if (head == null)
+                return;
+
+            HashSet<int> set = new HashSet<int>();
+            ListNode<int> p = head;
+            set.Add(p.Data);
+            while (p.Next != null)
             {
-                if (!map.ContainsKey(head.Data))
-                {
-                    map.Add(head.Data, true);
-                    pre = pre.Next;
-                }
+                if (set.Contains(p.Next.Data))
+                    p.Next = p.Next.Next;
                 else
-                    pre.Next = head.Next;
-                head = head.Next;
+                {
+                    set.Add(p.Next.Data);
+                    p = p.Next;
+                }
             }
         }
 
-        public static void DeleteDups2<T>(ListNode<T> head)
+        public static void DeleteDups2(ListNode<int> head)
         {
-            ListNode<T> cur = head;
-            ListNode<T> pre = head;
-            ListNode<T> next = head.Next;
+            if (head == null)
+                return;
+
+            ListNode<int> cur = head, p;
             while (cur != null)
             {
-                while (next != null && !next.Data.Equals(cur.Data))
+                p = cur;
+                while (p.Next != null)
                 {
-                    next = next.Next;
-                    pre = pre.Next;
+                    if (p.Next.Data == cur.Data)
+                        p.Next = p.Next.Next;
+                    else
+                        p = p.Next;
                 }
 
-                if (next != null)
-                {
-                    pre.Next = next.Next;
-                    next = next.Next;
-                }
-                else
-                {
-                    cur = cur.Next;
-                    pre = cur;
-                    next = pre != null? pre.Next : null;
-                }
+                cur = cur.Next;
             }
         }
     }
