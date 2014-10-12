@@ -28,31 +28,48 @@ namespace LeetCodeCSharp
     {
         public static double FindMedianSortedArrays(int[] A, int m, int[] B, int n)
         {
-            int total = m + n;
-            if(total%2 == 1) 
-                return Fms(A, 0, m, B, 0, n, total/2 + 1);
-            else 
-                return (Fms(A, 0, m, B, 0, n, total/2) + Fms(A, 0, m, B, 0, n, total/2 + 1))/2;
+            if ((m + n) % 2 == 1)
+                return Fms(A, 0, m - 1, B, 0, n - 1, (m + n) / 2);
+            else
+                return (Fms(A, 0, m - 1, B, 0, n - 1, (m + n) / 2 - 1) + 
+                    Fms(A, 0, m - 1, B, 0, n - 1, (m + n) / 2)) / 2.0;
         }
 
-        private static double Fms(
-            int[] A, int sa, int m, int[] B, int sb, int n, int k)
+        public static int Fms(
+            int[] A, int sa, int ea, int[] B, int sb, int eb, int k)
         {
-            if (m > n) 
-                return Fms(B, sb, n, A, sa, m, k);
+            int lenA = ea - sa + 1;
+            int lenB = eb - sb + 1;
 
-            if (m == 0) 
-                return B[sb + k - 1];
+            if (lenA == 0)
+                return B[sb + k];
 
-            if (k == 1) 
-                return Math.Min(A[sa], B[sb]);
+            if (lenB == 0)
+                return B[sa + k];
 
-            int pa = Math.Min(k/2, m);
-            int pb = k - pa;
-            if (A[sa + pa - 1] <= B[sb + pb - 1]) 
-                return Fms(A, sa + pa, m - pa, B, sb, n, k - pa);
+            if (k == 0)
+                return A[sa] < B[sb] ? A[sa] : B[sb];
+
+            int pa = k * lenA / (lenA + lenB);
+            int pb = k - pa - 1;
+
+            int ia = pa + sa;
+            int ib = pb + sb;
+
+            if (A[ia] > B[ib])
+            {
+                k = k - (ib - sb + 1);
+                ea = ia;
+                sb = ib + 1;
+            }
             else
-                return Fms(A, sa, m, B, sb + pb, n - pb, k - pb);
+            {
+                k = k - (ia - sa + 1);
+                eb = ib;
+                sa = ia + 1;
+            }
+
+            return Fms(A, sa, ea, B, sb, eb, k);
         }
     }
 }
