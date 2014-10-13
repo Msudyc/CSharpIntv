@@ -51,5 +51,15 @@ namespace LeetCodeCSharp
             t.Add("aabe");
             Assert.AreEqual("a", Ex014.LongestCommonPrefix(t));
         }
+
+        [TestMethod]
+        public void LeetCode_Ex014_Test_LongestCommonPrefix6()
+        {
+            List<string> t = new List<string>();
+            t.Add("aa");
+            t.Add("a");
+            t.Add("aabe");
+            Assert.AreEqual("a", Ex014.LongestCommonPrefix(t));
+        }
     }
 }

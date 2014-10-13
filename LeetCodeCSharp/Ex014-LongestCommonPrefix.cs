@@ -22,11 +22,17 @@ namespace LeetCodeCSharp
         public static string LongestCommonPrefix(List<string> strs)
         {
             // brute force O(mn)
-            if (strs.Count == 0) return "";
-            for (int i = 0; i < strs[0].Length; i++)
+            if (strs.Count == 0)
+                return string.Empty;
+            if (strs.Count == 1)
+                return strs[0];
+
+            string str = strs[0];
+            for (int i = 0; i < str.Length; i++)
                 for (int j = 1; j < strs.Count; j++)
-                    if (strs[j][i] != strs[0][i]) return strs[0].Substring(0, i);
-            return strs[0];
+                    if (strs[j].Length < i + 1 || strs[j][i] != str[i])
+                        return str.Substring(0, i);
+            return str;
         }
     }
 }
