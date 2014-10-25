@@ -50,5 +50,32 @@ namespace LeetCodeCSharp
 
             return dummy.Next;
         }
+
+        public static ListNode DeleteDuplicates2(ListNode head)
+        {
+            if (head == null || head.Next == null)
+                return head;
+
+            ListNode dummy = new ListNode(0);
+            dummy.Next = head;
+
+            ListNode p = dummy;
+            ListNode q = head;
+
+            while (q != null)
+            {
+                while (q != null && q.Next != null && q.Val == q.Next.Val)
+                    q = q.Next;
+
+                if (p.Next == q)
+                    p = p.Next;
+                else
+                    p.Next = q.Next;
+
+                q = q.Next;
+            }
+
+            return dummy.Next;
+        }
     }
 }

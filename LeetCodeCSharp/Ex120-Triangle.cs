@@ -34,5 +34,18 @@ namespace LeetCodeCSharp
 
             return p[0];
         }
+
+        public static int MinimumTotal2(List<List<int>> triangle)
+        {
+            if (triangle.Count == 0)
+                return 0;
+
+            List<int> last = new List<int>(triangle[triangle.Count - 1]);
+            for (int i = triangle.Count - 2; i >= 0; i--)
+                for (int j = 0; j < triangle[i].Count; j++)
+                    last[j] = Math.Min(last[j], last[j + 1]) + triangle[i][j];
+
+            return last[0];
+        }
     }
 }

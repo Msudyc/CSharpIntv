@@ -56,5 +56,25 @@ namespace LeetCodeCSharp
             int r = temp[n];
             return r;
         }
+
+        public static int NumDecodings2(string s)
+        {
+            if (string.IsNullOrEmpty(s))
+                return 0;
+
+            int[] dp = new int[s.Length + 1];
+            dp[s.Length] = 1;
+            dp[s.Length - 1] = 1;
+            for (int i = s.Length - 2; i >= 0; i--)
+            {
+                if ((s[i] == '1' && s[i + 1] <= '9' && s[i + 1] > '0')
+                    || (s[i] == '2' && s[i + 1] <= '6' && s[i + 1] >= '0'))
+                    dp[i] = dp[i + 1] + dp[i + 2];
+                else
+                    dp[i] = dp[i + 1];
+            }
+
+            return dp[0];
+        }
     }
 }

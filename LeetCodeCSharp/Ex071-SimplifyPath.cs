@@ -65,5 +65,38 @@ namespace LeetCodeCSharp
                 return "/";
             return ret.ToString();
         }
+
+        public static string SimplifyPath2(string path)
+        {
+            string[] temp = path.Split('/');
+            for (int i = 0; i < temp.Length; i++)
+            {
+                if (temp[i] == ".")
+                    temp[i] = string.Empty;
+                else if (temp[i] == "..")
+                {
+                    temp[i] = string.Empty;
+                    for (int k = i - 1; k >= 0; k--)
+                    {
+                        if (string.IsNullOrEmpty(temp[k]))
+                            continue;
+                        temp[k] = string.Empty;
+                        break;
+                    }
+                }
+            }
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < temp.Length; i++)
+            {
+                if (!string.IsNullOrEmpty(temp[i]))
+                {
+                    sb.Append("/");
+                    sb.Append(temp[i]);
+                }
+            }
+
+            return sb.ToString();
+        }
     }
 }

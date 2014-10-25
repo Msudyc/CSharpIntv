@@ -51,5 +51,41 @@ namespace LeetCodeCSharp
 
             return dummy.Next;
         }
+
+        public static ListNode ReverseBetween2(ListNode head, int m, int n)
+        {
+            ListNode dummy = new ListNode(0);
+            dummy.Next = head;
+            ListNode pre = dummy;
+            int i = 0;
+            while (i < m - 1)
+            {
+                pre = pre.Next;
+                i++;
+            }
+
+            i = 0;
+            ListNode next = head;
+            while (i < n)
+            {
+                i++;
+                next = next.Next;
+            }
+
+            Reverse(pre, next);
+            return dummy.Next;
+        }
+
+        private static void Reverse(ListNode pre, ListNode next)
+        {
+            ListNode fix = pre.Next;
+            while (fix.Next != next)
+            {
+                ListNode t = pre.Next;
+                pre.Next = fix.Next;
+                fix.Next = pre.Next.Next;
+                pre.Next.Next = t;
+            }
+        }
     }
 }

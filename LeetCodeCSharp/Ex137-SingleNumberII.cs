@@ -40,6 +40,20 @@ namespace LeetCodeCSharp
             return res;
         }
 
+        public static int SingleNumber2(int[] A)
+        {
+            int num = 0;
+            for (int i = 0; i < 32; i++)
+            {
+                int sum = 0;
+                foreach (int c in A)
+                    sum += (c >> i) & 0x1;
+                num += (sum % 3) << i;
+            }
+
+            return num;
+        }
+
         public static int SingleNumberA(int[] A)
         {
             int n1 = 0, n2 = 0;

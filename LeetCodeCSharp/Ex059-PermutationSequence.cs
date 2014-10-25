@@ -28,6 +28,7 @@ namespace LeetCodeCSharp
 {
     #region using
     using System;
+    using System.Text;
     using System.Collections.Generic;
     #endregion
 
@@ -60,6 +61,38 @@ namespace LeetCodeCSharp
             }
 
             return new string(arr);
+        }
+
+        public static string GetPermutation2(int n, int k)
+        {
+            List<int> numbers = new List<int>();
+            for (int i = 1; i <= n; i++)
+                numbers.Add(i);
+            k--;
+            StringBuilder sb = new StringBuilder();
+            for (int i = 1; i <= n; i++)
+            {
+                int fact = GetFactorial(n - i);
+                int index = k / fact;
+                k = k % fact;
+                int num = numbers[index];
+                sb.Append(num);
+                numbers.Remove(num);
+            }
+
+            return sb.ToString();
+        }
+
+        private static int GetFactorial(int n)
+        {
+            if (n == 0)
+                return 1;
+
+            int result = 1;
+            for (int i = 1; i <= n; i++)
+                result *= i;
+
+            return result;
         }
     }
 }

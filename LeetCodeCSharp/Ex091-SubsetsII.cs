@@ -38,32 +38,24 @@ namespace LeetCodeCSharp
         public static List<List<int>> SubsetsWithDup(List<int> S)
         {
             S.Sort();
-            List<List<int>> res = new List<List<int>>();
-            List<int> r = new List<int>();
-            res.Add(r);
-            r.Add(S[0]);
-            res.Add(r);
-            int pre = S[0];
-            int count = 1;
-            for (int i = 1; i < S.Count; i++)
-            {
-                int st = 0;
-                int sz = res.Count;
-                if (S[i] == pre) 
-                    st = sz - count;
-                count = 0;
-                for (int j = st; j < sz; j++)
-                {
-                    r = res[j];
-                    r.Add(S[i]);
-                    res.Add(r);
-                    count++;
-                }
+            List<List<int>> result = new List<List<int>>();
+            result.Add(new List<int>());
 
-                pre = S[i];
+            int lastAddNum = 1;
+            for (int i = 0; i < S.Count; i++)
+            {
+                int stopIndex = (i > 0 && S[i] == S[i - 1]) ? result.Count - lastAddNum : 0;
+                lastAddNum = 0;
+                for (int j = result.Count - 1; j >= stopIndex; j--)
+                {
+                    List<int> t = new List<int>(result[j]);
+                    t.Add(S[i]);
+                    result.Add(t);
+                    lastAddNum++;
+                }
             }
 
-            return res;
+            return result;
         }
 
         private static List<List<int>> SubsetsWithDupR(List<int> S)
