@@ -339,6 +339,14 @@
     <Compile Include="Ex149-MaxPointsonaLine.cs" />
     <Compile Include="Ex150-EvaluateReversePolishNotation-Test.cs" />
     <Compile Include="Ex150-EvaluateReversePolishNotation.cs" />
+    <Compile Include="Ex151-ReverseWordsinaString-Test.cs" />
+    <Compile Include="Ex151-ReverseWordsinaString.cs" />
+    <Compile Include="Ex152-MaximumProductSubarray-Test.cs" />
+    <Compile Include="Ex152-MaximumProductSubarray.cs" />
+    <Compile Include="Ex153-FindMinimuminRotatedSortedArray-Test.cs" />
+    <Compile Include="Ex153-FindMinimuminRotatedSortedArray.cs" />
+    <Compile Include="Ex154-FindMinimuminRotatedSortedArrayII-Test.cs" />
+    <Compile Include="Ex154-FindMinimuminRotatedSortedArrayII.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

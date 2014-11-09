@@ -42,5 +42,42 @@ namespace LeetCodeCSharp
                 
             return dp[0] - 1;
         }
+
+        public static int MinCut1(string s)
+        {
+            bool[,] Palindrome = GetPalindrome(s);
+            int[] dp = new int[s.Length];
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (Palindrome[0, i] == true)
+                    dp[i] = 0;
+                else
+                {
+                    int min = s.Length - 1;
+                    for (int j = 0; j < i; j++)
+                        if (Palindrome[j + 1, i] == true && dp[j] + 1 < min)
+                            min = dp[j] + 1;
+                    dp[i] = min;
+                }
+            }
+
+            return dp[s.Length - 1];
+        }
+
+        public static bool[,] GetPalindrome(string str)
+        {
+            int n = str.Length;
+            bool[,] dp = new bool[n, n];
+
+            for (int j = 0; j < n; j++)
+                for (int i = j; i >= 0; i--)
+                {
+                    if (str[j] == str[i] && (j - i < 2 || dp[i + 1, j - 1]))
+                        dp[i, j] = true;
+                }
+
+            return dp;
+        }
     }
 }
