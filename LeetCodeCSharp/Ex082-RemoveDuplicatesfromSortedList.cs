@@ -25,28 +25,18 @@ namespace LeetCodeCSharp
     {
         public static ListNode DeleteDuplicates(ListNode head)
         {
-            ListNode p = head, q;
-            if (p == null || p.Next == null) 
+            ListNode p = head;
+            if (p == null)
                 return p;
 
-            q = p.Next;
-            // invariant: no duplication in range [head, p] && q == p.Next
-            while (q != null)
+            while (p.Next != null)
             {
-                if (q.Val != p.Val) 
-                { 
-                    p = p.Next; 
-                    q = q.Next; 
-                }
+                if (p.Next.Val == p.Val)
+                    p.Next = p.Next.Next;
                 else
-                {
-                    // find duplicated value, range [head,p] is not changed.
-                    ListNode t = q;
-                    q = q.Next;
-                    p.Next = q;
-                }
+                    p = p.Next;
             }
-        
+
             return head;
         }
     }

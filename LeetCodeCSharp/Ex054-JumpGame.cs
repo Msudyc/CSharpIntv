@@ -37,5 +37,18 @@ namespace LeetCodeCSharp
                 reach = Math.Max(reach, A[i] + i + 1);
             return reach >= A.Length;
         }
+
+        public static bool CanJump2(int[] A)
+        {
+            int reach = 0;
+            for (int i = 0; i < A.Length; i++)
+            {
+                if (reach < i)
+                    return false;
+                reach = Math.Max(reach, i + A[i]);
+            }
+
+            return true;
+        }
     }
 }

@@ -69,5 +69,58 @@ namespace LeetCodeCSharp
             else 
                 return false;
         }
+
+        public static bool IsNumber2(string s)
+        {
+            int i = 0, n = s.Length;
+
+            // leading white spaces
+            while(i < n && char.IsWhiteSpace(s[i]))
+                i++;
+
+            // plus minus sign
+            if (i < n && (s[i] == '+' || s[i] == '-'))
+                i++;
+
+            // numbers
+            bool isNumeric = false;
+            while (i < n && char.IsDigit(s[i]))
+            {
+                i++;
+                isNumeric = true;
+            }
+
+            // decimal
+            if (i < n && s[i] == '.')
+            {
+                i++;
+                // fractionap part
+                while (i < n && char.IsDigit(s[i]))
+                {
+                    i++;
+                    isNumeric = true;
+                }
+            }
+
+            // exponent part
+            if (isNumeric && i < n && s[i] == 'e')
+            {
+                i++;
+                isNumeric = false;
+                if (i < n && (s[i] == '+' || s[i] == '-')) 
+                    i++;
+                while (i < n && char.IsDigit(s[i]))
+                {
+                    i++;
+                    isNumeric = true;
+                }
+            }
+
+            // trailing white spaces
+            while (i < n && char.IsWhiteSpace(s[i])) 
+                i++;
+
+            return isNumeric && i == n;
+        }
     }
 }

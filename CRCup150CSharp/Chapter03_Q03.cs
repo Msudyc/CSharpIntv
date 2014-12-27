@@ -25,27 +25,29 @@ namespace CRCup150CSharp
 
             public void Push(int value)
             {
-                if (lastStack == null || this.IsStackFull(lastStack))
+                if (this.lastStack == null || this.IsStackFull(this.lastStack))
                 {
                     Stack<int> stack = new Stack<int>();
-                    stacks.Add(stack);
-                    lastStack = stack;
+                    this.stacks.Add(stack);
+                    this.lastStack = stack;
                 }
 
-                lastStack.Push(value);
+                this.lastStack.Push(value);
             }
 
             public int Pop()
             {
-                if (lastStack == null)
+                if (this.lastStack == null)
                     throw new IndexOutOfRangeException("Stacks is empty");
-                int value = lastStack.Pop();
-                if (lastStack.Count == 0)
-                    stacks.Remove(lastStack);
-                if (stacks.Count > 0)
-                    lastStack = stacks[stacks.Count - 1];
-                else
-                    lastStack = null;
+                int value = this.lastStack.Pop();
+                if (this.lastStack.Count == 0)
+                {
+                    this.stacks.Remove(this.lastStack);
+                    if (this.stacks.Count > 0)
+                        this.lastStack = this.stacks[this.stacks.Count - 1];
+                    else
+                        this.lastStack = null;
+                }
 
                 return value;
             }

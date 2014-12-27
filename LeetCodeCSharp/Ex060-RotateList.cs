@@ -49,5 +49,29 @@ namespace LeetCodeCSharp
             head = dummy.Next;
             return head;
         }
+
+        public static ListNode RotateRight2(ListNode head, int k)
+        {
+            int len = 0;
+            ListNode t = head;
+            while (t.Next != null)
+            {
+                len++;
+                t = t.Next;
+            }
+            
+            t.Next = head;
+            len++;
+            int x = 0;
+            while (x < len - k)
+            {
+                x++;
+                t = t.Next;
+            }
+
+            ListNode newHead = t.Next;
+            t.Next = null;
+            return newHead;
+        }
     }
 }

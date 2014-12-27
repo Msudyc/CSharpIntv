@@ -49,6 +49,27 @@ namespace LeetCodeCSharp
             return res;
         }
 
+        public static List<Interval> Merge2(List<Interval> intervals)
+        {
+            List<Interval> res = new List<Interval>();
+            if (intervals.Count == 0)
+                return res;
+
+            intervals.Sort(IsLower);
+            res.Add(intervals[0]);
+            for (int i = 1; i < intervals.Count; i++)
+            {
+                Interval cur = intervals[i];
+                Interval last = res[res.Count - 1];
+                if (last.End >= cur.Start)
+                    last.End = Math.Max(last.End, cur.End);
+                else
+                    res.Add(cur);
+            }
+
+            return res;
+        }
+
         private static int IsLower(Interval v1, Interval v2)
         {
             return v1.Start - v2.Start;

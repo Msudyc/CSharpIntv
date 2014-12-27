@@ -26,33 +26,6 @@ namespace LeetCodeCSharp
     {
         public static ListNode DeleteDuplicates(ListNode head)
         {
-            ListNode dummy = new ListNode(0);
-            dummy.Next = head;
-
-            ListNode pre = dummy, cur = head;
-            while (cur != null) 
-            {
-                int temp = cur.Val;
-                if (cur.Next != null && cur.Next.Val == temp) 
-                {
-                    while (cur != null && cur.Val == temp) 
-                    {
-                        pre.Next = cur.Next;
-                        cur = pre.Next;
-                    }
-
-                    cur = pre;
-                }
-
-                pre = cur;
-                cur = cur.Next;
-            }
-
-            return dummy.Next;
-        }
-
-        public static ListNode DeleteDuplicates2(ListNode head)
-        {
             if (head == null || head.Next == null)
                 return head;
 

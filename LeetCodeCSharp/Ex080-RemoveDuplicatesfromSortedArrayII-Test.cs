@@ -34,5 +34,33 @@ namespace LeetCodeCSharp
             int[] t = {1,2,3};
             Assert.AreEqual(3, Ex080.RemoveDuplicates(t));
         }
+
+        [TestMethod]
+        public void LeetCode_Ex080_Test_RemoveDuplicates5()
+        {
+            int[] t = { 1, 1, 1, 2, 2, 3 };
+            Assert.AreEqual(5, Ex080.RemoveDuplicates2(t));
+        }
+
+        [TestMethod]
+        public void LeetCode_Ex080_Test_RemoveDuplicates6()
+        {
+            int[] t = { 1, 1, 2, 2, 3 };
+            Assert.AreEqual(5, Ex080.RemoveDuplicates2(t));
+        }
+
+        [TestMethod]
+        public void LeetCode_Ex080_Test_RemoveDuplicates7()
+        {
+            int[] t = { 1, 1, 1, 1, 1, 1, 2, 2, 3 };
+            Assert.AreEqual(5, Ex080.RemoveDuplicates2(t));
+        }
+
+        [TestMethod]
+        public void LeetCode_Ex080_Test_RemoveDuplicates8()
+        {
+            int[] t = { 1, 2, 3 };
+            Assert.AreEqual(3, Ex080.RemoveDuplicates2(t));
+        }
     };
 }

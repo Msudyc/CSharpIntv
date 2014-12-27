@@ -37,5 +37,36 @@ namespace LeetCodeCSharp
             List<Interval> r = Ex055.Merge(t);
             Assert.AreEqual(1, r.Count);
         }
+
+        [TestMethod]
+        public void LeetCode_Ex055_Test_Merge4()
+        {
+            List<Interval> t = new List<Interval>();
+            t.Add(new Interval(0, 2));
+            t.Add(new Interval(1, 4));
+            t.Add(new Interval(5, 7));
+            List<Interval> r = Ex055.Merge2(t);
+            Assert.AreEqual(2, r.Count);
+        }
+
+        [TestMethod]
+        public void LeetCode_Ex055_Test_Merge5()
+        {
+            List<Interval> t = new List<Interval>();
+            t.Add(new Interval(0, 2));
+            List<Interval> r = Ex055.Merge2(t);
+            Assert.AreEqual(1, r.Count);
+        }
+
+        [TestMethod]
+        public void LeetCode_Ex055_Test_Merge6()
+        {
+            List<Interval> t = new List<Interval>();
+            t.Add(new Interval(0, 2));
+            t.Add(new Interval(1, 4));
+            t.Add(new Interval(4, 7));
+            List<Interval> r = Ex055.Merge2(t);
+            Assert.AreEqual(1, r.Count);
+        }
     };
 }

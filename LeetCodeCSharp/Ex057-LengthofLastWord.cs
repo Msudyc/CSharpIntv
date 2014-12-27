@@ -44,5 +44,28 @@ namespace LeetCodeCSharp
 
             return l;
         }
+
+        public static int LengthOfLastWord2(string s)
+        {
+            int l = 0;
+            bool restart = true;
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] == ' ')
+                    restart = true;
+                else
+                {
+                    if (restart == true)
+                    {
+                        l = 1;
+                        restart = false;
+                    }
+                    else
+                        l++;
+                }
+            }
+
+            return l;
+        }
     }
 }

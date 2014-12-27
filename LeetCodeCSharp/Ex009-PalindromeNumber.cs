@@ -40,10 +40,10 @@ namespace LeetCodeCSharp
                     if (t != r) 
                         return false;
 
-                    if ((x - t * l) >= l / 10)
-                        x = (x - t * l - r) / 10;
+                    if ((x % l) >= l / 10)
+                        x = (x % l - r) / 10;
                     else
-                        x = (x + l / 10 - t * l - r) / 10 + 1;
+                        x = (x % l + l / 10 - r) / 10 + 1;
                 }
 
                 return true;

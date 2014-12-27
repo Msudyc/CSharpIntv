@@ -41,5 +41,31 @@ namespace CRCup150CSharp
             string re = r.ToString();
             return re.Length < str.Length ? re : str;
         }
+
+        public static string Compress2(string str)
+        {
+            if (string.IsNullOrEmpty(str))
+                return str;
+
+            StringBuilder sb = new StringBuilder();
+            int count = 1;
+            int l = 0;
+            for (int i = 1; i < str.Length; i++)
+            {
+                if (str[i] == str[l])
+                    count++;
+                else
+                {
+                    sb.Append(str[l]);
+                    sb.Append(count);
+                    l = i;
+                    count = 1;
+                }
+            }
+
+            sb.Append(str[l]);
+            sb.Append(count);
+            return sb.ToString().Length < str.Length ? sb.ToString() : str;
+        }
     }
 }

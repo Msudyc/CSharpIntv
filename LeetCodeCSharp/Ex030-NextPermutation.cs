@@ -46,7 +46,7 @@ namespace LeetCodeCSharp
             i--; //left elem to be exchanged
 
             int j = num.Count - 1;
-            while (j > i  && (num[j] < num[i]))
+            while (num[j] < num[i])
                 j--;
 
             int temp = num[i];

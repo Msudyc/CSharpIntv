@@ -38,5 +38,32 @@ namespace LeetCodeCSharp
 
             return cur + 1;
         }
+
+        public static int RemoveDuplicates2(int[] A)
+        {
+            if (A.Length <= 2)
+                return A.Length;
+
+            int cur = 0;
+            int count = 1;
+            for (int i = 1; i < A.Length; i++)
+            {
+                if (A[i] != A[cur])
+                {
+                    A[cur++] = A[i];
+                    count = 1;
+                }
+                else
+                {
+                    if (count < 2)
+                    {
+                        A[cur++] = A[i];
+                        count++;
+                    }
+                }
+            }
+
+            return cur + 1;
+        }
     }
 }

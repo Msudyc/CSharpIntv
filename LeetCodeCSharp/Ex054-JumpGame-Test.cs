@@ -26,5 +26,25 @@ namespace LeetCodeCSharp
             int[] B = {0,2,1,0,4};
             Assert.IsFalse(Ex054.CanJump(B));
         }
+
+        [TestMethod]
+        public void LeetCode_Ex054_Test_CanJump3()
+        {
+            int[] A = { 2, 3, 1, 1, 4 };
+            Assert.IsTrue(Ex054.CanJump2(A));
+
+            int[] B = { 3, 2, 1, 0, 4 };
+            Assert.IsFalse(Ex054.CanJump2(B));
+        }
+
+        [TestMethod]
+        public void LeetCode_Ex054_Test_CanJump4()
+        {
+            int[] A = { 2 };
+            Assert.IsTrue(Ex054.CanJump2(A));
+
+            int[] B = { 0, 2, 1, 0, 4 };
+            Assert.IsFalse(Ex054.CanJump2(B));
+        }
     };
 }
