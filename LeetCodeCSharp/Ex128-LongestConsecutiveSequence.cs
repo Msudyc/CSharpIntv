@@ -35,21 +35,20 @@ namespace LeetCodeCSharp
             int res = 0;
             for (int i = 0; i < num.Length; i++)
             {
-                int mx = 1;
+                int mx = 0;
                 int fd = num[i];
-                mp.Remove(num[i]);
-                while (mp.ContainsKey(fd + 1))
+                while (mp.ContainsKey(fd))
                 {
                     mx++;
-                    mp.Remove(fd + 1);
+                    mp.Remove(fd);
                     fd++;
                 }
 
-                fd = num[i];
-                while (mp.ContainsKey(fd - 1))
+                fd = num[i]-1;
+                while (mp.ContainsKey(fd))
                 {
                     mx++;
-                    mp.Remove(fd - 1);
+                    mp.Remove(fd);
                     fd--;
                 }
 

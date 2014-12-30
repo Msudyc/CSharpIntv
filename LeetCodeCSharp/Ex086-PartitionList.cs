@@ -29,29 +29,47 @@ namespace LeetCodeCSharp
     {
         public static ListNode Partition(ListNode head, int x)
         {
-            ListNode dummy = new ListNode(0);
-            dummy.Next = head;
-            ListNode end = dummy, pre = dummy, cur = head;
-            while (cur != null) 
+            ListNode before = null, p = null;
+            ListNode after = null, q = null;
+
+            while (head != null)
             {
-                if (cur.Val < x) 
+                if (head.Val < x)
                 {
-                    if (pre != end) 
+                    if (p == null)
                     {
-                        pre.Next = cur.Next;
-                        cur.Next = end.Next;
-                        end.Next = cur;
-                        cur = pre;
+                        p = head;
+                        before = p;
                     }
-                
-                    end = end.Next;
+                    else
+                    {
+                        p.Next = head;
+                        p = p.Next;
+                    }
                 }
-            
-                pre = cur;
-                cur = cur.Next;
+                else
+                {
+                    if (q == null)
+                    {
+                        q = head;
+                        after = q;
+                    }
+                    else
+                    {
+                        q.Next = head;
+                        q = q.Next;
+                    }
+                }
+
+                head = head.Next;
             }
-        
-            return dummy.Next;
+
+            if (p != null)
+                p.Next = after;
+            if (q != null)
+                q.Next = null;
+
+            return before != null ? before : after;
         }
     }
 }

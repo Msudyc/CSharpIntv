@@ -26,13 +26,9 @@ namespace LeetCodeCSharp
         public static int FindMin(int[] num)
         {
             int start = 0, end = num.Length - 1;
-            while (start < end)
+            while (start < end && num[start] >= num[end])
             {
-                if (num[start] < num[end])
-                    return num[start];
-
                 int mid = (start + end) / 2;
-
                 if (num[mid] >= num[start])
                     start = mid + 1;
                 else

@@ -24,20 +24,19 @@ namespace LeetCodeCSharp
     {
         public static bool IsBalanced(TreeNode root)
         {
-            if (root == null) 
-                return true;
-            int left = GetHeight(root.Left);
-            int right = GetHeight(root.Right);
-            if (Math.Abs(left - right) > 1) 
-                return false;
-            return IsBalanced(root.Left) && IsBalanced(root.Right);
+            return GetHeight(root) > 0;
         }
 
-        private static int GetHeight(TreeNode p)
+        public static int GetHeight(TreeNode root)
         {
-            if (p == null) 
+            if (root == null)
                 return 0;
-            return Math.Max(GetHeight(p.Left), GetHeight(p.Right)) + 1;
+            int left = GetHeight(root.Left);
+            int right = GetHeight(root.Right);
+            if (left < 0 || right < 0 || Math.Abs(left - right) > 1)
+                return -1;
+
+            return Math.Max(left, right) + 1;
         }
     }
 }

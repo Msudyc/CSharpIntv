@@ -52,8 +52,7 @@ namespace LeetCodeCSharp
             {
                 maxprice = Math.Max(maxprice, prices[i + 1]);
                 maxprofit = Math.Max(maxprofit, maxprice - prices[i]);
-                if (res < maxFromHead[i] + maxprofit)
-                    res = maxFromHead[i] + maxprofit;
+                res = Math.Max(res, maxFromHead[i] + maxprofit);
             }
 
             return res;

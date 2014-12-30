@@ -37,9 +37,8 @@ namespace LeetCodeCSharp
         public static bool HasPathSum(TreeNode root, int sum)
         {
             if (root == null) 
-                return false;
-            if (root.Left == null && root.Right == null && root.Val == sum)
-                return true;
+                return sum == 0;
+
             return HasPathSum(root.Left, sum - root.Val) || 
                 HasPathSum(root.Right, sum - root.Val);
         }

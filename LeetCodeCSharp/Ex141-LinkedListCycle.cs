@@ -24,7 +24,7 @@ namespace LeetCodeCSharp
         public static bool HasCycle(ListNode head)
         {
             ListNode slow = head, fast = head;
-            while (slow != null && fast != null && fast.Next != null)
+            while (fast != null && fast.Next != null)
             {
                 slow = slow.Next;
                 fast = fast.Next.Next;

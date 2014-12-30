@@ -39,9 +39,10 @@ namespace LeetCodeCSharp
                     stk.Push(i++);
                 else
                 {
-                    int t = stk.Peek(); 
-                    stk.Pop();
-                    m = Math.Max(m, height[t] * (stk.Count == 0 ? i : i - stk.Peek() - 1));
+                    int t = stk.Pop();
+                    int len = stk.Count == 0 ? i : i - stk.Peek() - 1;
+                    int area = height[t] * len;
+                    m = Math.Max(m, area);
                 }
             }
 

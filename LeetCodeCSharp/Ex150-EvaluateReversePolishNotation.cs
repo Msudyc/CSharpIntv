@@ -36,10 +36,8 @@ namespace LeetCodeCSharp
                     s.Push(tokens[i]);
                 else
                 {
-                    int right = Convert.ToInt32(s.Peek());
-                    s.Pop();
-                    int left = Convert.ToInt32(s.Peek());
-                    s.Pop();
+                    int right = Convert.ToInt32(s.Pop());
+                    int left = Convert.ToInt32(s.Pop());
                     if (tokens[i] == "+") 
                         result = left + right;
                     else if (tokens[i] == "-") 
@@ -52,7 +50,7 @@ namespace LeetCodeCSharp
                 }
             }
 
-            result = Convert.ToInt32(s.Peek());
+            result = Convert.ToInt32(s.Pop());
             return result;
         }
     }

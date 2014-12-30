@@ -14,5 +14,13 @@ namespace LeetCodeCSharp
             string es = "blue is sky the";
             Assert.AreEqual(es, Ex151.ReverseWords(s));
         }
+
+        [TestMethod]
+        public void LeetCode_Ex151_Test_ReverseWords2()
+        {
+            string s = "a";
+            string es = "a";
+            Assert.AreEqual(es, Ex151.ReverseWords(s));
+        }
     };
 }

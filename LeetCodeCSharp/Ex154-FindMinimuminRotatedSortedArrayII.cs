@@ -34,7 +34,7 @@ namespace LeetCodeCSharp
             while (L < R && num[L] >= num[R])
             {
                 int M = (L + R) / 2;
-                if (num[M] > num[R])
+                if (num[M] > num[L])
                     L = M + 1;
                 else if (num[M] < num[L])
                     R = M;

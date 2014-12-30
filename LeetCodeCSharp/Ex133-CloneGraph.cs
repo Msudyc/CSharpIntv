@@ -59,8 +59,9 @@ namespace LeetCodeCSharp
             Queue<UndirectedGraphNode> q = new Queue<UndirectedGraphNode>();
             UndirectedGraphNode ret = new UndirectedGraphNode(node.Label);
             ret.Neighbors = node.Neighbors;
-            Dictionary<int, UndirectedGraphNode> umap = new Dictionary<int,UndirectedGraphNode>();
-            umap[ret.Label] = ret;
+            Dictionary<UndirectedGraphNode, UndirectedGraphNode> umap = 
+                new Dictionary<UndirectedGraphNode, UndirectedGraphNode>();
+            umap[node] = ret;
 
             q.Enqueue(ret);
             while (q.Count != 0)
@@ -69,15 +70,15 @@ namespace LeetCodeCSharp
                 UndirectedGraphNode n = q.Dequeue();
                 foreach (UndirectedGraphNode k in n.Neighbors)
                 {
-                    if (umap.ContainsKey(k.Label))
-                        v.Add(umap[k.Label]);
+                    if (umap.ContainsKey(k))
+                        v.Add(umap[k]);
                     else
                     {
                         UndirectedGraphNode a = new UndirectedGraphNode(k.Label);
                         a.Neighbors = k.Neighbors;
                         v.Add(a);
                         q.Enqueue(a);
-                        umap[a.Label] = a;
+                        umap[k] = a;
                     }
                 }
 
