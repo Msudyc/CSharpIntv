@@ -53,6 +53,18 @@ namespace LeetCodeCSharp
             return Reverse(sb.ToString());
         }
 
+        public static string ConvertToTitleFromZero(int n)
+        {
+            StringBuilder sb = new StringBuilder();
+            while (n >= 0)
+            {
+                sb.Append((char)('A' + n % 26));
+                n = n / 26 - 1;
+            }
+
+            return Reverse(sb.ToString());
+        }
+
         private static string Reverse(string str)
         {
             char[] arr = str.ToCharArray();

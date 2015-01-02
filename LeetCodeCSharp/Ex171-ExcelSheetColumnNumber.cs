@@ -33,10 +33,23 @@ namespace LeetCodeCSharp
             int res = 0;
             if (s.Length == 0)
                 return 0;
+
             for (int i = 0; i < s.Length; ++i)
                 res = res * 26 + s[i] - 'A' + 1;
             
             return res;
+        }
+
+        public static int TitleToNumberFromZero(string s)
+        {
+            int res = 0;
+            if (s.Length == 0)
+                return -1;
+
+            for (int i = 0; i < s.Length; ++i)
+                res = res * 26 + s[i] - 'A' + 1;
+
+            return res - 1;
         }
     }
 }
